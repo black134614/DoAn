@@ -1,0 +1,468 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Quản Lý Hình Ảnh - Admin Control  Panel</title>
+    <!--Css-->
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/font-awesome.css" rel="stylesheet" />
+    <link href="Plugins/Fancybox/jquery.fancybox.css" rel="stylesheet" />
+    <link href="Content/style.css" rel="stylesheet" />
+    <link href="Content/responsive.css" rel="stylesheet" />
+</head>
+<body>
+    <section class="container">
+        <div class="row">
+            <div class="col-lg-4 min-vh-100 main-menu" id="main-menu">
+                <aside class="welcome-box">
+                    <a href="#">
+                        <i class="fa fa-user-circle"></i>
+                        <span>Admin Template</span>
+                    </a>
+                </aside>
+                <aside class="account-info">
+                    <img src="images/avatar.jpg" />
+                    <div>
+                        Welcome,
+                        <strong>User</strong>
+                    </div>
+                </aside>
+                <div class="clearfix"></div>
+                <aside class="menu">
+                    <div class="accordion" id="accordionExample">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#menu-home">
+                                        <i class="fa fa-home"></i>
+                                        Trang Chủ
+                                    </button>
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#menu-home">
+                                        <i class="fa fa-chevron-down"></i>
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <!--<div id="menu-home" class="collapse show" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <ul>
+                                        <li>
+                                            <a href="#">Trang chủ 1</a>
+                                            <button class="btn btn-link" data-toggle="collapse" data-target="#sub-menu-home1">
+                                                <i class="fa fa-chevron-down"></i>
+                                            </button>
+                                            <ul id="sub-menu-home1" class="collapse">
+                                                <li>
+                                                    <a href="#">Trang chủ 1.1</a>
+                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#sub-sub-menu-home1">
+                                                        <i class="fa fa-chevron-down"></i>
+                                                    </button>
+                                                    <ul id="sub-sub-menu-home1" class="collapse">
+                                                        <li>
+                                                            <a href="#">Trang chủ 1.1.1</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">Trang chủ 1.1.2</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Trang chủ 1.2</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">Trang chủ 2</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Trang chủ 3</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>-->
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#menu-contact">
+                                        <i class="fa fa-user"></i>
+                                        Quản lý tài khoản
+                                    </button>
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#menu-account">
+                                        <i class="fa fa-chevron-down"></i>
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <div id="menu-account" class="collapse" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <ul>
+                                        <li>
+                                            <a href="AccountCategory.html">
+                                                <i class="fa fa-th-large"></i>
+                                                Danh mục tài khoản
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="AccountList.html">
+                                                <i class="fa fa-list-ul"></i>
+                                                Danh sách tài khoản
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#menu-article">
+                                        <i class="fa fa-newspaper-o"></i>
+                                        Quản lý tin tức
+                                    </button>
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#menu-article">
+                                        <i class="fa fa-chevron-down"></i>
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <div id="menu-article" class="collapse" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <ul>
+                                        <li>
+                                            <a href="ArticleCategory.html">
+                                                <i class="fa fa-th-large"></i>
+                                                Danh mục tin tức
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="ArticleList.html">
+                                                <i class="fa fa-list-ul"></i>
+                                                Danh sách tin tức
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#menu-product">
+                                        <i class="fa fa-product-hunt"></i>
+                                        Quản lý sản phẩm
+                                    </button>
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#menu-product">
+                                        <i class="fa fa-chevron-down"></i>
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <div id="menu-product" class="collapse" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <ul>
+                                        <li>
+                                            <a href="ProductCategory.html">
+                                                <i class="fa fa-th-large"></i>
+                                                Danh mục sản phẩm
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="ProductList.html">
+                                                <i class="fa fa-list-ul"></i>
+                                                Danh sách sản phẩm
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#menu-contact">
+                                        <i class="fa fa-picture-o"></i>
+                                        Quản lý hình ảnh
+                                    </button>
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#menu-picture">
+                                        <i class="fa fa-chevron-down"></i>
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <div id="menu-picture" class="collapse" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <ul>
+                                        <li>
+                                            <a href="PictureCategory.html">
+                                                <i class="fa fa-th-large"></i>
+                                                Danh mục hình ảnh
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="PictureList.html">
+                                                <i class="fa fa-list-ul"></i>
+                                                Danh sách hình ảnh
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#menu-video">
+                                        <i class="fa fa-video-camera"></i>
+                                        Quản lý video
+                                    </button>
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#menu-video">
+                                        <i class="fa fa-chevron-down"></i>
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <div id="menu-video" class="collapse" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <ul>
+                                        <li>
+                                            <a href="VideoCategory.html">
+                                                <i class="fa fa-th-large"></i>
+                                                Danh mục video
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="VideoList.html">
+                                                <i class="fa fa-list-ul"></i>
+                                                Danh sách video
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#menu-service">
+                                        <i class="fa fa-snowflake-o"></i>
+                                        Quản lý dịch vụ
+                                    </button>
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#menu-service">
+                                        <i class="fa fa-chevron-down"></i>
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <div id="menu-service" class="collapse" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <ul>
+                                        <li>
+                                            <a href="ServiceCategory.html">
+                                                <i class="fa fa-th-large"></i>
+                                                Danh mục dịch vụ
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="ServiceList.html">
+                                                <i class="fa fa-list-ul"></i>
+                                                Danh sách dịch vụ
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#menu-contact">
+                                        <i class="fa fa-envelope"></i>
+                                        Quản lý liên hệ
+                                    </button>
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#menu-contact">
+                                        <i class="fa fa-chevron-down"></i>
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <div id="menu-contact" class="collapse" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <ul>
+                                        <li>
+                                            <a href="ContactCategory.html">
+                                                <i class="fa fa-th-large"></i>
+                                                Danh mục liên hệ
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="ContactList.html">
+                                                <i class="fa fa-list-ul"></i>
+                                                Danh sách liên hệ
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                <aside class="footer">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-secondary"><i class="fa fa-cog"></i></button>
+                        <button type="button" class="btn btn-secondary"><i class="fa fa-arrows-alt"></i></button>
+                        <button type="button" class="btn btn-secondary"><i class="fa fa-eye"></i></button>
+                        <button type="button" class="btn btn-secondary"><i class="fa fa-power-off"></i></button>
+                    </div>
+                </aside>
+            </div>
+            <div class="col-lg-8 min-vh-100 main-content" id="main-content">
+                <header>
+                    <div class="toogle-button" id="toogle-button">
+                        <a href="#">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </div>
+                    <div class="website-info">
+                        <a href="#">
+                            Admin Control Panel
+                        </a>
+                    </div>
+                </header>
+                <main>
+                    <nav>
+                        <ol class="breadcrumb pull-left">
+                            <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+                            <li class="breadcrumb-item active"><a href="VideoList.html">Danh sách hình ảnh</a></li>
+                        </ol>
+                        <a class="btn btn-primary rounded-pill pull-right" href="VideoEdit.html">
+                            <i class="fa fa-plus"></i>
+                        </a>
+                    </nav>
+                    <section id="picture-list">
+                        <div class="card-columns">
+                            <div class="card">
+                                <img src="https://cdn.tgdd.vn/Products/Images/42/206176/samsung-galaxy-note-10-plus-blue-400x400.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Samsung Galaxy note 10+</h5>
+                                    <p class="card-text">mô tả</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://s.ftcdn.net/v2013/pics/all/curated/RKyaEDwp8J7JKeZWQPuOVWvkUjGQfpCx_cover_580.jpg?r=1a0fc22192d0c808b8bb2b9bcfbf4a45b1793687" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Samsung Galaxy note 10+</h5>
+                                    <p class="card-text">mô tả</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="data:image/jpeg;base64,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" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Samsung Galaxy note 10+</h5>
+                                    <p class="card-text">mô tả</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://images.pexels.com/photos/658687/pexels-photo-658687.jpeg?cs=srgb&dl=red-rose-flower-658687.jpg&fm=jpg" alt="Alternate Text" class="card-img-top" />
+                                <div class="card-body">
+                                    <h5 class="card-title">Samsung Galaxy note 10+</h5>
+                                    <p class="card-text">mô tả</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://cdn.tgdd.vn/Products/Images/42/206176/samsung-galaxy-note-10-plus-blue-400x400.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Samsung Galaxy note 10+</h5>
+                                    <p class="card-text">mô tả</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://s.ftcdn.net/v2013/pics/all/curated/RKyaEDwp8J7JKeZWQPuOVWvkUjGQfpCx_cover_580.jpg?r=1a0fc22192d0c808b8bb2b9bcfbf4a45b1793687" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Samsung Galaxy note 10+</h5>
+                                    <p class="card-text">mô tả</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="data:image/jpeg;base64,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" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Samsung Galaxy note 10+</h5>
+                                    <p class="card-text">mô tả</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://images.pexels.com/photos/658687/pexels-photo-658687.jpeg?cs=srgb&dl=red-rose-flower-658687.jpg&fm=jpg" alt="Alternate Text" class="card-img-top" />
+                                <div class="card-body">
+                                    <h5 class="card-title">Samsung Galaxy note 10+</h5>
+                                    <p class="card-text">mô tả</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://cdn.tgdd.vn/Products/Images/42/206176/samsung-galaxy-note-10-plus-blue-400x400.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Samsung Galaxy note 10+</h5>
+                                    <p class="card-text">mô tả</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://s.ftcdn.net/v2013/pics/all/curated/RKyaEDwp8J7JKeZWQPuOVWvkUjGQfpCx_cover_580.jpg?r=1a0fc22192d0c808b8bb2b9bcfbf4a45b1793687" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Samsung Galaxy note 10+</h5>
+                                    <p class="card-text">mô tả</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="data:image/jpeg;base64,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" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Samsung Galaxy note 10+</h5>
+                                    <p class="card-text">mô tả</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="https://images.pexels.com/photos/658687/pexels-photo-658687.jpeg?cs=srgb&dl=red-rose-flower-658687.jpg&fm=jpg" alt="Alternate Text" class="card-img-top" />
+                                <div class="card-body">
+                                    <h5 class="card-title">Samsung Galaxy note 10+</h5>
+                                    <p class="card-text">mô tả</p>
+                                </div>
+                            </div>
+                        </div>
+                        <nav class="pt-2">
+                            <ul class="pagination pagination-sm justify-content-center">
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <i class="fa fa-angle-left"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item active">
+                                    <span class="page-link">
+                                        1
+                                    </span>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <i class="fa fa-angle-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </section>
+                </main>
+                <footer>
+                    Copyright 2019-2020. All rights reserved.
+                </footer>
+            </div>
+        </div>
+    </section>
+    <section id="Script">
+        <script src="Scripts/popper.js"></script>
+        <script src="Scripts/jquery-3.0.0.js"></script>
+        <script src="Scripts/bootstrap.js"></script>
+        <script src="Plugins/Fancybox/jquery.fancybox.js"></script>
+        <script src="Scripts/script.js"></script>
+    </section>
+</body>
+</html>

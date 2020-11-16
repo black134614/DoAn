@@ -1,0 +1,502 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Quản Lý Tin Tức - Admin Control Panel</title>
+    <!--Css-->
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/font-awesome.css" rel="stylesheet" />
+    <link href="Plugins/Fancybox/jquery.fancybox.css" rel="stylesheet" />
+    <link href="Content/style.css" rel="stylesheet" />
+    <link href="Content/responsive.css" rel="stylesheet" />
+</head>
+<body>
+    <section class="container">
+        <div class="row">
+            <div class="col-lg-4 min-vh-100 main-menu" id="main-menu">
+                <aside class="welcome-box">
+                    <a href="#">
+                        <i class="fa fa-user-circle"></i>
+                        <span>Admin Template</span>
+                    </a>
+                </aside>
+                <aside class="account-info">
+                    <img src="images/avatar.jpg" />
+                    <div>
+                        Welcome,
+                        <strong>User</strong>
+                    </div>
+                </aside>
+                <div class="clearfix"></div>
+                <aside class="menu">
+                    <div class="accordion" id="accordionExample">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#menu-home">
+                                        <i class="fa fa-home"></i>
+                                        Trang Chủ
+                                    </button>
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#menu-home">
+                                        <i class="fa fa-chevron-down"></i>
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <!--<div id="menu-home" class="collapse show" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <ul>
+                                        <li>
+                                            <a href="#">Trang chủ 1</a>
+                                            <button class="btn btn-link" data-toggle="collapse" data-target="#sub-menu-home1">
+                                                <i class="fa fa-chevron-down"></i>
+                                            </button>
+                                            <ul id="sub-menu-home1" class="collapse">
+                                                <li>
+                                                    <a href="#">Trang chủ 1.1</a>
+                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#sub-sub-menu-home1">
+                                                        <i class="fa fa-chevron-down"></i>
+                                                    </button>
+                                                    <ul id="sub-sub-menu-home1" class="collapse">
+                                                        <li>
+                                                            <a href="#">Trang chủ 1.1.1</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">Trang chủ 1.1.2</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Trang chủ 1.2</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">Trang chủ 2</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Trang chủ 3</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>-->
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#menu-contact">
+                                        <i class="fa fa-user"></i>
+                                        Quản lý tài khoản
+                                    </button>
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#menu-account">
+                                        <i class="fa fa-chevron-down"></i>
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <div id="menu-account" class="collapse" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <ul>
+                                        <li>
+                                            <a href="AccountCategory.html">
+                                                <i class="fa fa-th-large"></i>
+                                                Danh mục tài khoản
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="AccountList.html">
+                                                <i class="fa fa-list-ul"></i>
+                                                Danh sách tài khoản
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#menu-article">
+                                        <i class="fa fa-newspaper-o"></i>
+                                        Quản lý tin tức
+                                    </button>
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#menu-article">
+                                        <i class="fa fa-chevron-down"></i>
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <div id="menu-article" class="collapse" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <ul>
+                                        <li>
+                                            <a href="ArticleCategory.html">
+                                                <i class="fa fa-th-large"></i>
+                                                Danh mục tin tức
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="ArticleList.html">
+                                                <i class="fa fa-list-ul"></i>
+                                                Danh sách tin tức
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#menu-product">
+                                        <i class="fa fa-product-hunt"></i>
+                                        Quản lý sản phẩm
+                                    </button>
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#menu-product">
+                                        <i class="fa fa-chevron-down"></i>
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <div id="menu-product" class="collapse" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <ul>
+                                        <li>
+                                            <a href="ProductCategory.html">
+                                                <i class="fa fa-th-large"></i>
+                                                Danh mục sản phẩm
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="ProductList.html">
+                                                <i class="fa fa-list-ul"></i>
+                                                Danh sách sản phẩm
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#menu-contact">
+                                        <i class="fa fa-picture-o"></i>
+                                        Quản lý hình ảnh
+                                    </button>
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#menu-picture">
+                                        <i class="fa fa-chevron-down"></i>
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <div id="menu-picture" class="collapse" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <ul>
+                                        <li>
+                                            <a href="PictureCategory.html">
+                                                <i class="fa fa-th-large"></i>
+                                                Danh mục hình ảnh
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="PictureList.html">
+                                                <i class="fa fa-list-ul"></i>
+                                                Danh sách hình ảnh
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#menu-video">
+                                        <i class="fa fa-video-camera"></i>
+                                        Quản lý video
+                                    </button>
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#menu-video">
+                                        <i class="fa fa-chevron-down"></i>
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <div id="menu-video" class="collapse" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <ul>
+                                        <li>
+                                            <a href="VideoCategory.html">
+                                                <i class="fa fa-th-large"></i>
+                                                Danh mục video
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="VideoList.html">
+                                                <i class="fa fa-list-ul"></i>
+                                                Danh sách video
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#menu-service">
+                                        <i class="fa fa-snowflake-o"></i>
+                                        Quản lý dịch vụ
+                                    </button>
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#menu-service">
+                                        <i class="fa fa-chevron-down"></i>
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <div id="menu-service" class="collapse" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <ul>
+                                        <li>
+                                            <a href="ServiceCategory.html">
+                                                <i class="fa fa-th-large"></i>
+                                                Danh mục dịch vụ
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="ServiceList.html">
+                                                <i class="fa fa-list-ul"></i>
+                                                Danh sách dịch vụ
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#menu-contact">
+                                        <i class="fa fa-envelope"></i>
+                                        Quản lý liên hệ
+                                    </button>
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#menu-contact">
+                                        <i class="fa fa-chevron-down"></i>
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <div id="menu-contact" class="collapse" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <ul>
+                                        <li>
+                                            <a href="ContactCategory.html">
+                                                <i class="fa fa-th-large"></i>
+                                                Danh mục liên hệ
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="ContactList.html">
+                                                <i class="fa fa-list-ul"></i>
+                                                Danh sách liên hệ
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                <aside class="footer">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-secondary"><i class="fa fa-cog"></i></button>
+                        <button type="button" class="btn btn-secondary"><i class="fa fa-arrows-alt"></i></button>
+                        <button type="button" class="btn btn-secondary"><i class="fa fa-eye"></i></button>
+                        <button type="button" class="btn btn-secondary"><i class="fa fa-power-off"></i></button>
+                    </div>
+                </aside>
+            </div>
+            <div class="col-lg-8 min-vh-100 main-content" id="main-content">
+                <header>
+                    <div class="toogle-button" id="toogle-button">
+                        <a href="#">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </div>
+                    <div class="website-info">
+                        <a href="#">
+                            Admin Control Panel
+                        </a>
+                    </div>
+                </header>
+                <main>
+                    <nav>
+                        <ol class="breadcrumb pull-left">
+                            <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+                            <li class="breadcrumb-item active"><a href="ArticleList.aspx">Danh sách tin tức</a></li>
+                        </ol>
+                        <a class="btn btn-primary rounded-pill pull-right" href="ArticleEdit.html">
+                            <i class="fa fa-plus"></i>
+                        </a>
+                    </nav>
+                    <section id="article-list">
+                        <table class="table table-striped table-sm">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>
+                                        Hình
+                                    </th>
+                                    <th>
+                                        Tiêu đề / Mã số <br />
+                                        Thể loại / Mô tả
+                                    </th>
+                                    <th>
+                                        Người đăng / Ngày đăng
+                                    </th>
+                                    <th>
+                                        Chức năng
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="thumb">
+                                        <a target="_blank" data-fancybox="gallery" href="https://znews-photo.zadn.vn/w660/Uploaded/ofh_ftmztzmy/2019_05_29/ip.jpg">
+                                            <img src="https://znews-photo.zadn.vn/w660/Uploaded/ofh_ftmztzmy/2019_05_29/ip.jpg" />
+                                        </a>
+                                        <a href="#" class="btn btn-success btn-sm">
+                                            <i class="fa fa-picture-o"></i>Thay hình
+                                        </a>
+                                    </td>
+                                    <td class="info">
+                                        <b>iPhone của tôi tự động nói chuyện với ai lúc 3h sáng?</b>
+                                        <br />
+                                        Mã số: <b>1</b>
+                                        <br />
+                                        Thể loại: <b>Tin tức</b>
+                                        <p>
+                                            “Đó là 3 giờ sáng. Bạn có biết chuyện gì đang xảy ra với chiếc iPhone của mình không? Điện thoại của tôi dường như đang làm việc tất bật. Mặc dù màn hình đã tắt và tôi đang ngủ, nhưng các ứng dụng liên tục chuyển rất nhiều thông tin về tôi cho bên thứ ba nào đó. Và rất có thể, iPhone của bạn cũng gặp tình cảnh tương tự. Chẳng hiểu Apple có thể làm gì để ngăn chặn chúng”, chuyên gia công nghệ Geoffrey A. Fowler trả lời tờ Washington Post.
+                                        </p>
+                                    </td>
+                                    <td class="author">
+                                        Admin <br />
+                                        07/07/2019 <br />
+                                        07:00:00
+                                    </td>
+                                    <td class="action">
+                                        <a class="btn btn-primary" href="ArticleList.html">Xem</a>
+                                        <a class="btn btn-primary" href="ArticleList.html">Sửa</a>
+                                        <a class="btn btn-danger" href="javascript: alert:('Chức năng đang thực hiện')">Xoá</a>
+                                        <a class="btn btn-warning" href="javascript: alert:('Chức năng đang thực hiện')">Khoá</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="thumb">
+                                        <a target="_blank" data-fancybox="gallery" href="https://znews-photo.zadn.vn/w660/Uploaded/ofh_ftmztzmy/2019_05_29/ip.jpg">
+                                            <img src="https://znews-photo.zadn.vn/w660/Uploaded/lce_jwquc/2019_05_28/THUMB.jpg" />
+                                        </a>
+                                        <a href="#" class="btn btn-success btn-sm">
+                                            <i class="fa fa-picture-o"></i>Thay hình
+                                        </a>
+                                    </td>
+                                    <td class="info">
+                                        <b>iPhone của tôi tự động nói chuyện với ai lúc 3h sáng?</b>
+                                        <br />
+                                        Mã số: <b>1</b>
+                                        <br />
+                                        Thể loại: <b>Tin tức</b>
+                                        <p>
+                                            “Đó là 3 giờ sáng. Bạn có biết chuyện gì đang xảy ra với chiếc iPhone của mình không? Điện thoại của tôi dường như đang làm việc tất bật. Mặc dù màn hình đã tắt và tôi đang ngủ, nhưng các ứng dụng liên tục chuyển rất nhiều thông tin về tôi cho bên thứ ba nào đó. Và rất có thể, iPhone của bạn cũng gặp tình cảnh tương tự. Chẳng hiểu Apple có thể làm gì để ngăn chặn chúng”, chuyên gia công nghệ Geoffrey A. Fowler trả lời tờ Washington Post.
+                                        </p>
+                                    </td>
+                                    <td class="author">
+                                        Admin <br />
+                                        07/07/2019 <br />
+                                        07:00:00
+                                    </td>
+                                    <td class="action">
+                                        <a class="btn btn-primary" href="ArticleList.html">Xem</a>
+                                        <a class="btn btn-primary" href="ArticleList.html">Sửa</a>
+                                        <a class="btn btn-danger" href="javascript: alert:('Chức năng đang thực hiện')">Xoá</a>
+                                        <a class="btn btn-warning" href="javascript: alert:('Chức năng đang thực hiện')">Khoá</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="thumb">
+                                        <a target="_blank" data-fancybox="gallery" href="https://znews-photo.zadn.vn/w660/Uploaded/ofh_ftmztzmy/2019_05_29/ip.jpg">
+                                            <img src="https://znews-photo.zadn.vn/w660/Uploaded/ynssi/2019_05_29/pictureperfect_8d3ccf3634ec3549577fc9d72642f3cb_small_resize.jpg" />
+                                        </a>
+                                        <a href="#" class="btn btn-success btn-sm">
+                                            <i class="fa fa-picture-o"></i>Thay hình
+                                        </a>
+                                    </td>
+                                    <td class="info">
+                                        <b>iPhone của tôi tự động nói chuyện với ai lúc 3h sáng?</b>
+                                        <br />
+                                        Mã số: <b>1</b>
+                                        <br />
+                                        Thể loại: <b>Tin tức</b>
+                                        <p>
+                                            “Đó là 3 giờ sáng. Bạn có biết chuyện gì đang xảy ra với chiếc iPhone của mình không? Điện thoại của tôi dường như đang làm việc tất bật. Mặc dù màn hình đã tắt và tôi đang ngủ, nhưng các ứng dụng liên tục chuyển rất nhiều thông tin về tôi cho bên thứ ba nào đó. Và rất có thể, iPhone của bạn cũng gặp tình cảnh tương tự. Chẳng hiểu Apple có thể làm gì để ngăn chặn chúng”, chuyên gia công nghệ Geoffrey A. Fowler trả lời tờ Washington Post.
+                                        </p>
+                                    </td>
+                                    <td class="author">
+                                        Admin <br />
+                                        07/07/2019 <br />
+                                        07:00:00
+                                    </td>
+                                    <td class="action">
+                                        <a class="btn btn-primary" href="ArticleList.html">Xem</a>
+                                        <a class="btn btn-primary" href="ArticleList.html">Sửa</a>
+                                        <a class="btn btn-danger" href="javascript: alert:('Chức năng đang thực hiện')">Xoá</a>
+                                        <a class="btn btn-warning" href="javascript: alert:('Chức năng đang thực hiện')">Khoá</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="4">
+                                        <nav>
+                                            <ul class="pagination pagination-sm justify-content-center">
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#">
+                                                        <i class="fa fa-angle-left"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="page-item active">
+                                                    <span class="page-link">
+                                                        1
+                                                    </span>
+                                                </li>
+                                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#">
+                                                        <i class="fa fa-angle-right"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </section>
+                </main>
+                <footer>
+                    Copyright 2019-2020. All rights reserved.
+                </footer>
+            </div>
+        </div>
+    </section>
+    <section id="Script">
+        <script src="Scripts/popper.js"></script>
+        <script src="Scripts/jquery-3.0.0.js"></script>
+        <script src="Scripts/bootstrap.js"></script>
+        <script src="Plugins/Fancybox/jquery.fancybox.js"></script>
+        <script src="Scripts/script.js"></script>
+    </section>
+</body>
+</html>

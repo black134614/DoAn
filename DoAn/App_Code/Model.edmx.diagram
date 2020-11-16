@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="61c6034cebbc44ba963f3282cd5cc8b1" Name="Diagram1">
+        <EntityTypeShape EntityType="DBModel.Banner" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.ChuyenDe" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.HinhAnhHoatDong" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.LienKetHuuIch" Width="1.5" PointX="3" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Menu" Width="1.5" PointX="3" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.NguoiDung" Width="1.5" PointX="0.75" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.TabThongTin" Width="1.5" PointX="3" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.ThongBao" Width="1.5" PointX="3" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.ThongTinWebSite" Width="1.5" PointX="3" PointY="24.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.TinBai" Width="1.5" PointX="5.25" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.VanBan" Width="1.5" PointX="3" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Video" Width="1.5" PointX="3" PointY="31.875" IsExpanded="true" />
+        <AssociationConnector Association="DBModel.FK_Banner_NguoiDung" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_ChuyenDe_NguoiDung" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_HinhAnhHoatDong_NguoiDung" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_LienKetHuuIch_NguoiDung" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Menu_NguoiDung" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_TinBai_Menu" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_TabThongTin_NguoiDung" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_ThongBao_NguoiDung" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_ThongTinWebSite_NguoiDung" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_TinBai_NguoiDung" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_VanBan_NguoiDung" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Video_NguoiDung" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

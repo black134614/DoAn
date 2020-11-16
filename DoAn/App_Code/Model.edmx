@@ -1,0 +1,922 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="Banner">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" />
+          <Property Name="Link" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Show" Type="bit" />
+          <Property Name="NguoiDungID" Type="int" />
+        </EntityType>
+        <EntityType Name="ChuyenDe">
+          <Key>
+            <PropertyRef Name="ChuyenDeID" />
+          </Key>
+          <Property Name="ChuyenDeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" />
+          <Property Name="LinkFile" Type="nvarchar" MaxLength="500" />
+          <Property Name="Show" Type="bit" />
+          <Property Name="NguoiDungID" Type="int" />
+        </EntityType>
+        <EntityType Name="HinhAnhHoatDong">
+          <Key>
+            <PropertyRef Name="HinhAnhHoatDongID" />
+          </Key>
+          <Property Name="HinhAnhHoatDongID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" />
+          <Property Name="Name_Ext" Type="nvarchar" MaxLength="255" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="Show" Type="bit" />
+          <Property Name="NguoiDungID" Type="int" />
+        </EntityType>
+        <EntityType Name="LienKetHuuIch">
+          <Key>
+            <PropertyRef Name="LienKetHuuIchID" />
+          </Key>
+          <Property Name="LienKetHuuIchID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" />
+          <Property Name="Link" Type="nvarchar" MaxLength="500" />
+          <Property Name="Show" Type="bit" />
+          <Property Name="NguoiDungID" Type="int" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="MenuID" />
+          </Key>
+          <Property Name="MenuID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="NameLink" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Show" Type="bit" Nullable="false" />
+          <Property Name="Positon" Type="int" />
+          <Property Name="NguoiDungID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NguoiDung">
+          <Key>
+            <PropertyRef Name="NguoiDungID" />
+          </Key>
+          <Property Name="NguoiDungID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="TenDV" Type="nvarchar" MaxLength="200" />
+          <Property Name="SDT" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="LoginName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" />
+          <Property Name="TrangThai" Type="bit" />
+          <Property Name="image" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TabThongTin">
+          <Key>
+            <PropertyRef Name="TabThongTinID" />
+          </Key>
+          <Property Name="TabThongTinID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" />
+          <Property Name="Content" Type="nvarchar" MaxLength="500" />
+          <Property Name="Show" Type="bit" />
+          <Property Name="NguoiDungID" Type="int" />
+        </EntityType>
+        <EntityType Name="ThongBao">
+          <Key>
+            <PropertyRef Name="ThongBaoID" />
+          </Key>
+          <Property Name="ThongBaoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" />
+          <Property Name="Detail" Type="nvarchar(max)" />
+          <Property Name="PostDate" Type="datetime" />
+          <Property Name="Show" Type="bit" />
+          <Property Name="NguoiDungID" Type="int" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Content" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ThongTinWebSite">
+          <Key>
+            <PropertyRef Name="ThongTinWebSiteID" />
+          </Key>
+          <Property Name="ThongTinWebSiteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tenWebSite" Type="nvarchar" MaxLength="500" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="250" />
+          <Property Name="SoDienThoai" Type="varchar" MaxLength="11" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="250" />
+          <Property Name="Email" Type="nvarchar" MaxLength="500" />
+          <Property Name="ThongTinThem" Type="nvarchar(max)" />
+          <Property Name="NguoiDungID" Type="int" />
+          <Property Name="TrangThai" Type="bit" />
+        </EntityType>
+        <EntityType Name="TinBai">
+          <Key>
+            <PropertyRef Name="TinBaiID" />
+          </Key>
+          <Property Name="TinBaiID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="500" />
+          <Property Name="TitleLink" Type="nvarchar" MaxLength="500" />
+          <Property Name="Images" Type="nvarchar" MaxLength="500" />
+          <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Detail" Type="nvarchar(max)" />
+          <Property Name="Duyet" Type="bit" />
+          <Property Name="Xoa" Type="bit" />
+          <Property Name="NgayDang" Type="datetime" />
+          <Property Name="NguoiDungID" Type="int" Nullable="false" />
+          <Property Name="MenuID" Type="int" Nullable="false" />
+          <Property Name="TinNoiBat" Type="bit" />
+        </EntityType>
+        <EntityType Name="VanBan">
+          <Key>
+            <PropertyRef Name="VanBanID" />
+          </Key>
+          <Property Name="VanBanID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SoHieu" Type="nvarchar" MaxLength="50" />
+          <Property Name="NgayBanHanh" Type="date" />
+          <Property Name="NgayHieuLuc" Type="date" />
+          <Property Name="MoTa" Type="nvarchar" MaxLength="500" />
+          <Property Name="CoQuanBH" Type="nvarchar" MaxLength="500" />
+          <Property Name="link" Type="nvarchar" MaxLength="500" />
+          <Property Name="NguoiDungID" Type="int" />
+        </EntityType>
+        <EntityType Name="Video">
+          <Key>
+            <PropertyRef Name="VideoID" />
+          </Key>
+          <Property Name="VideoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" />
+          <Property Name="Source" Type="nvarchar" MaxLength="100" />
+          <Property Name="Time" Type="nvarchar" MaxLength="255" />
+          <Property Name="Show" Type="bit" />
+          <Property Name="NguoiDungID" Type="int" />
+        </EntityType>
+        <Association Name="FK_Banner_NguoiDung">
+          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="0..1" />
+          <End Role="Banner" Type="Self.Banner" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="NguoiDungID" />
+            </Principal>
+            <Dependent Role="Banner">
+              <PropertyRef Name="NguoiDungID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChuyenDe_NguoiDung">
+          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="0..1" />
+          <End Role="ChuyenDe" Type="Self.ChuyenDe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="NguoiDungID" />
+            </Principal>
+            <Dependent Role="ChuyenDe">
+              <PropertyRef Name="NguoiDungID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HinhAnhHoatDong_NguoiDung">
+          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="0..1" />
+          <End Role="HinhAnhHoatDong" Type="Self.HinhAnhHoatDong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="NguoiDungID" />
+            </Principal>
+            <Dependent Role="HinhAnhHoatDong">
+              <PropertyRef Name="NguoiDungID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LienKetHuuIch_NguoiDung">
+          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="0..1" />
+          <End Role="LienKetHuuIch" Type="Self.LienKetHuuIch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="NguoiDungID" />
+            </Principal>
+            <Dependent Role="LienKetHuuIch">
+              <PropertyRef Name="NguoiDungID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Menu_NguoiDung">
+          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="1" />
+          <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="NguoiDungID" />
+            </Principal>
+            <Dependent Role="Menu">
+              <PropertyRef Name="NguoiDungID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabThongTin_NguoiDung">
+          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="0..1" />
+          <End Role="TabThongTin" Type="Self.TabThongTin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="NguoiDungID" />
+            </Principal>
+            <Dependent Role="TabThongTin">
+              <PropertyRef Name="NguoiDungID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ThongBao_NguoiDung">
+          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="0..1" />
+          <End Role="ThongBao" Type="Self.ThongBao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="NguoiDungID" />
+            </Principal>
+            <Dependent Role="ThongBao">
+              <PropertyRef Name="NguoiDungID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ThongTinWebSite_NguoiDung">
+          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="0..1" />
+          <End Role="ThongTinWebSite" Type="Self.ThongTinWebSite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="NguoiDungID" />
+            </Principal>
+            <Dependent Role="ThongTinWebSite">
+              <PropertyRef Name="NguoiDungID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TinBai_Menu">
+          <End Role="Menu" Type="Self.Menu" Multiplicity="1" />
+          <End Role="TinBai" Type="Self.TinBai" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menu">
+              <PropertyRef Name="MenuID" />
+            </Principal>
+            <Dependent Role="TinBai">
+              <PropertyRef Name="MenuID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TinBai_NguoiDung">
+          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="1" />
+          <End Role="TinBai" Type="Self.TinBai" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="NguoiDungID" />
+            </Principal>
+            <Dependent Role="TinBai">
+              <PropertyRef Name="NguoiDungID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VanBan_NguoiDung">
+          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="0..1" />
+          <End Role="VanBan" Type="Self.VanBan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="NguoiDungID" />
+            </Principal>
+            <Dependent Role="VanBan">
+              <PropertyRef Name="NguoiDungID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Video_NguoiDung">
+          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="0..1" />
+          <End Role="Video" Type="Self.Video" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="NguoiDungID" />
+            </Principal>
+            <Dependent Role="Video">
+              <PropertyRef Name="NguoiDungID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBModelStoreContainer">
+          <EntitySet Name="Banner" EntityType="Self.Banner" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ChuyenDe" EntityType="Self.ChuyenDe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HinhAnhHoatDong" EntityType="Self.HinhAnhHoatDong" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LienKetHuuIch" EntityType="Self.LienKetHuuIch" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NguoiDung" EntityType="Self.NguoiDung" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TabThongTin" EntityType="Self.TabThongTin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ThongBao" EntityType="Self.ThongBao" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ThongTinWebSite" EntityType="Self.ThongTinWebSite" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TinBai" EntityType="Self.TinBai" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VanBan" EntityType="Self.VanBan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Video" EntityType="Self.Video" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Banner_NguoiDung" Association="Self.FK_Banner_NguoiDung">
+            <End Role="NguoiDung" EntitySet="NguoiDung" />
+            <End Role="Banner" EntitySet="Banner" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChuyenDe_NguoiDung" Association="Self.FK_ChuyenDe_NguoiDung">
+            <End Role="NguoiDung" EntitySet="NguoiDung" />
+            <End Role="ChuyenDe" EntitySet="ChuyenDe" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HinhAnhHoatDong_NguoiDung" Association="Self.FK_HinhAnhHoatDong_NguoiDung">
+            <End Role="NguoiDung" EntitySet="NguoiDung" />
+            <End Role="HinhAnhHoatDong" EntitySet="HinhAnhHoatDong" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LienKetHuuIch_NguoiDung" Association="Self.FK_LienKetHuuIch_NguoiDung">
+            <End Role="NguoiDung" EntitySet="NguoiDung" />
+            <End Role="LienKetHuuIch" EntitySet="LienKetHuuIch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Menu_NguoiDung" Association="Self.FK_Menu_NguoiDung">
+            <End Role="NguoiDung" EntitySet="NguoiDung" />
+            <End Role="Menu" EntitySet="Menu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabThongTin_NguoiDung" Association="Self.FK_TabThongTin_NguoiDung">
+            <End Role="NguoiDung" EntitySet="NguoiDung" />
+            <End Role="TabThongTin" EntitySet="TabThongTin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThongBao_NguoiDung" Association="Self.FK_ThongBao_NguoiDung">
+            <End Role="NguoiDung" EntitySet="NguoiDung" />
+            <End Role="ThongBao" EntitySet="ThongBao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThongTinWebSite_NguoiDung" Association="Self.FK_ThongTinWebSite_NguoiDung">
+            <End Role="NguoiDung" EntitySet="NguoiDung" />
+            <End Role="ThongTinWebSite" EntitySet="ThongTinWebSite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TinBai_Menu" Association="Self.FK_TinBai_Menu">
+            <End Role="Menu" EntitySet="Menu" />
+            <End Role="TinBai" EntitySet="TinBai" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TinBai_NguoiDung" Association="Self.FK_TinBai_NguoiDung">
+            <End Role="NguoiDung" EntitySet="NguoiDung" />
+            <End Role="TinBai" EntitySet="TinBai" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VanBan_NguoiDung" Association="Self.FK_VanBan_NguoiDung">
+            <End Role="NguoiDung" EntitySet="NguoiDung" />
+            <End Role="VanBan" EntitySet="VanBan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Video_NguoiDung" Association="Self.FK_Video_NguoiDung">
+            <End Role="NguoiDung" EntitySet="NguoiDung" />
+            <End Role="Video" EntitySet="Video" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityType Name="Banner">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Link" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Show" Type="Boolean" />
+          <Property Name="NguoiDungID" Type="Int32" />
+          <NavigationProperty Name="NguoiDung" Relationship="Self.FK_Banner_NguoiDung" FromRole="Banner" ToRole="NguoiDung" />
+        </EntityType>
+        <EntityType Name="ChuyenDe">
+          <Key>
+            <PropertyRef Name="ChuyenDeID" />
+          </Key>
+          <Property Name="ChuyenDeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="LinkFile" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Show" Type="Boolean" />
+          <Property Name="NguoiDungID" Type="Int32" />
+          <NavigationProperty Name="NguoiDung" Relationship="Self.FK_ChuyenDe_NguoiDung" FromRole="ChuyenDe" ToRole="NguoiDung" />
+        </EntityType>
+        <EntityType Name="HinhAnhHoatDong">
+          <Key>
+            <PropertyRef Name="HinhAnhHoatDongID" />
+          </Key>
+          <Property Name="HinhAnhHoatDongID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Name_Ext" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Show" Type="Boolean" />
+          <Property Name="NguoiDungID" Type="Int32" />
+          <NavigationProperty Name="NguoiDung" Relationship="Self.FK_HinhAnhHoatDong_NguoiDung" FromRole="HinhAnhHoatDong" ToRole="NguoiDung" />
+        </EntityType>
+        <EntityType Name="LienKetHuuIch">
+          <Key>
+            <PropertyRef Name="LienKetHuuIchID" />
+          </Key>
+          <Property Name="LienKetHuuIchID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Link" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Show" Type="Boolean" />
+          <Property Name="NguoiDungID" Type="Int32" />
+          <NavigationProperty Name="NguoiDung" Relationship="Self.FK_LienKetHuuIch_NguoiDung" FromRole="LienKetHuuIch" ToRole="NguoiDung" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="MenuID" />
+          </Key>
+          <Property Name="MenuID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NameLink" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Show" Type="Boolean" Nullable="false" />
+          <Property Name="Positon" Type="Int32" />
+          <Property Name="NguoiDungID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="NguoiDung" Relationship="Self.FK_Menu_NguoiDung" FromRole="Menu" ToRole="NguoiDung" />
+          <NavigationProperty Name="TinBais" Relationship="Self.FK_TinBai_Menu" FromRole="Menu" ToRole="TinBai" />
+        </EntityType>
+        <EntityType Name="NguoiDung">
+          <Key>
+            <PropertyRef Name="NguoiDungID" />
+          </Key>
+          <Property Name="NguoiDungID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TenDV" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SDT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LoginName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TrangThai" Type="Boolean" />
+          <Property Name="image" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Banners" Relationship="Self.FK_Banner_NguoiDung" FromRole="NguoiDung" ToRole="Banner" />
+          <NavigationProperty Name="ChuyenDes" Relationship="Self.FK_ChuyenDe_NguoiDung" FromRole="NguoiDung" ToRole="ChuyenDe" />
+          <NavigationProperty Name="HinhAnhHoatDongs" Relationship="Self.FK_HinhAnhHoatDong_NguoiDung" FromRole="NguoiDung" ToRole="HinhAnhHoatDong" />
+          <NavigationProperty Name="LienKetHuuIches" Relationship="Self.FK_LienKetHuuIch_NguoiDung" FromRole="NguoiDung" ToRole="LienKetHuuIch" />
+          <NavigationProperty Name="Menus" Relationship="Self.FK_Menu_NguoiDung" FromRole="NguoiDung" ToRole="Menu" />
+          <NavigationProperty Name="TabThongTins" Relationship="Self.FK_TabThongTin_NguoiDung" FromRole="NguoiDung" ToRole="TabThongTin" />
+          <NavigationProperty Name="ThongBaos" Relationship="Self.FK_ThongBao_NguoiDung" FromRole="NguoiDung" ToRole="ThongBao" />
+          <NavigationProperty Name="ThongTinWebSites" Relationship="Self.FK_ThongTinWebSite_NguoiDung" FromRole="NguoiDung" ToRole="ThongTinWebSite" />
+          <NavigationProperty Name="TinBais" Relationship="Self.FK_TinBai_NguoiDung" FromRole="NguoiDung" ToRole="TinBai" />
+          <NavigationProperty Name="VanBans" Relationship="Self.FK_VanBan_NguoiDung" FromRole="NguoiDung" ToRole="VanBan" />
+          <NavigationProperty Name="Videos" Relationship="Self.FK_Video_NguoiDung" FromRole="NguoiDung" ToRole="Video" />
+        </EntityType>
+        <EntityType Name="TabThongTin">
+          <Key>
+            <PropertyRef Name="TabThongTinID" />
+          </Key>
+          <Property Name="TabThongTinID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Show" Type="Boolean" />
+          <Property Name="NguoiDungID" Type="Int32" />
+          <NavigationProperty Name="NguoiDung" Relationship="Self.FK_TabThongTin_NguoiDung" FromRole="TabThongTin" ToRole="NguoiDung" />
+        </EntityType>
+        <EntityType Name="ThongBao">
+          <Key>
+            <PropertyRef Name="ThongBaoID" />
+          </Key>
+          <Property Name="ThongBaoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PostDate" Type="DateTime" Precision="3" />
+          <Property Name="Show" Type="Boolean" />
+          <Property Name="NguoiDungID" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NguoiDung" Relationship="Self.FK_ThongBao_NguoiDung" FromRole="ThongBao" ToRole="NguoiDung" />
+        </EntityType>
+        <EntityType Name="ThongTinWebSite">
+          <Key>
+            <PropertyRef Name="ThongTinWebSiteID" />
+          </Key>
+          <Property Name="ThongTinWebSiteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tenWebSite" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SoDienThoai" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="Fax" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ThongTinThem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NguoiDungID" Type="Int32" />
+          <Property Name="TrangThai" Type="Boolean" />
+          <NavigationProperty Name="NguoiDung" Relationship="Self.FK_ThongTinWebSite_NguoiDung" FromRole="ThongTinWebSite" ToRole="NguoiDung" />
+        </EntityType>
+        <EntityType Name="TinBai">
+          <Key>
+            <PropertyRef Name="TinBaiID" />
+          </Key>
+          <Property Name="TinBaiID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TitleLink" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Images" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Duyet" Type="Boolean" />
+          <Property Name="Xoa" Type="Boolean" />
+          <Property Name="NgayDang" Type="DateTime" Precision="3" />
+          <Property Name="NguoiDungID" Type="Int32" Nullable="false" />
+          <Property Name="MenuID" Type="Int32" Nullable="false" />
+          <Property Name="TinNoiBat" Type="Boolean" />
+          <NavigationProperty Name="Menu" Relationship="Self.FK_TinBai_Menu" FromRole="TinBai" ToRole="Menu" />
+          <NavigationProperty Name="NguoiDung" Relationship="Self.FK_TinBai_NguoiDung" FromRole="TinBai" ToRole="NguoiDung" />
+        </EntityType>
+        <EntityType Name="VanBan">
+          <Key>
+            <PropertyRef Name="VanBanID" />
+          </Key>
+          <Property Name="VanBanID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SoHieu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NgayBanHanh" Type="DateTime" Precision="0" />
+          <Property Name="NgayHieuLuc" Type="DateTime" Precision="0" />
+          <Property Name="MoTa" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CoQuanBH" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="link" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NguoiDungID" Type="Int32" />
+          <NavigationProperty Name="NguoiDung" Relationship="Self.FK_VanBan_NguoiDung" FromRole="VanBan" ToRole="NguoiDung" />
+        </EntityType>
+        <EntityType Name="Video">
+          <Key>
+            <PropertyRef Name="VideoID" />
+          </Key>
+          <Property Name="VideoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Source" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Time" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Show" Type="Boolean" />
+          <Property Name="NguoiDungID" Type="Int32" />
+          <NavigationProperty Name="NguoiDung" Relationship="Self.FK_Video_NguoiDung" FromRole="Video" ToRole="NguoiDung" />
+        </EntityType>
+        <Association Name="FK_Banner_NguoiDung">
+          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="0..1" />
+          <End Role="Banner" Type="Self.Banner" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="NguoiDungID" />
+            </Principal>
+            <Dependent Role="Banner">
+              <PropertyRef Name="NguoiDungID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChuyenDe_NguoiDung">
+          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="0..1" />
+          <End Role="ChuyenDe" Type="Self.ChuyenDe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="NguoiDungID" />
+            </Principal>
+            <Dependent Role="ChuyenDe">
+              <PropertyRef Name="NguoiDungID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HinhAnhHoatDong_NguoiDung">
+          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="0..1" />
+          <End Role="HinhAnhHoatDong" Type="Self.HinhAnhHoatDong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="NguoiDungID" />
+            </Principal>
+            <Dependent Role="HinhAnhHoatDong">
+              <PropertyRef Name="NguoiDungID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LienKetHuuIch_NguoiDung">
+          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="0..1" />
+          <End Role="LienKetHuuIch" Type="Self.LienKetHuuIch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="NguoiDungID" />
+            </Principal>
+            <Dependent Role="LienKetHuuIch">
+              <PropertyRef Name="NguoiDungID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Menu_NguoiDung">
+          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="1" />
+          <End Role="Menu" Type="Self.Menu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="NguoiDungID" />
+            </Principal>
+            <Dependent Role="Menu">
+              <PropertyRef Name="NguoiDungID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TinBai_Menu">
+          <End Role="Menu" Type="Self.Menu" Multiplicity="1" />
+          <End Role="TinBai" Type="Self.TinBai" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menu">
+              <PropertyRef Name="MenuID" />
+            </Principal>
+            <Dependent Role="TinBai">
+              <PropertyRef Name="MenuID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabThongTin_NguoiDung">
+          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="0..1" />
+          <End Role="TabThongTin" Type="Self.TabThongTin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="NguoiDungID" />
+            </Principal>
+            <Dependent Role="TabThongTin">
+              <PropertyRef Name="NguoiDungID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ThongBao_NguoiDung">
+          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="0..1" />
+          <End Role="ThongBao" Type="Self.ThongBao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="NguoiDungID" />
+            </Principal>
+            <Dependent Role="ThongBao">
+              <PropertyRef Name="NguoiDungID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ThongTinWebSite_NguoiDung">
+          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="0..1" />
+          <End Role="ThongTinWebSite" Type="Self.ThongTinWebSite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="NguoiDungID" />
+            </Principal>
+            <Dependent Role="ThongTinWebSite">
+              <PropertyRef Name="NguoiDungID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TinBai_NguoiDung">
+          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="1" />
+          <End Role="TinBai" Type="Self.TinBai" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="NguoiDungID" />
+            </Principal>
+            <Dependent Role="TinBai">
+              <PropertyRef Name="NguoiDungID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VanBan_NguoiDung">
+          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="0..1" />
+          <End Role="VanBan" Type="Self.VanBan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="NguoiDungID" />
+            </Principal>
+            <Dependent Role="VanBan">
+              <PropertyRef Name="NguoiDungID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Video_NguoiDung">
+          <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="0..1" />
+          <End Role="Video" Type="Self.Video" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NguoiDung">
+              <PropertyRef Name="NguoiDungID" />
+            </Principal>
+            <Dependent Role="Video">
+              <PropertyRef Name="NguoiDungID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Banners" EntityType="Self.Banner" />
+          <EntitySet Name="ChuyenDes" EntityType="Self.ChuyenDe" />
+          <EntitySet Name="HinhAnhHoatDongs" EntityType="Self.HinhAnhHoatDong" />
+          <EntitySet Name="LienKetHuuIches" EntityType="Self.LienKetHuuIch" />
+          <EntitySet Name="Menus" EntityType="Self.Menu" />
+          <EntitySet Name="NguoiDungs" EntityType="Self.NguoiDung" />
+          <EntitySet Name="TabThongTins" EntityType="Self.TabThongTin" />
+          <EntitySet Name="ThongBaos" EntityType="Self.ThongBao" />
+          <EntitySet Name="ThongTinWebSites" EntityType="Self.ThongTinWebSite" />
+          <EntitySet Name="TinBais" EntityType="Self.TinBai" />
+          <EntitySet Name="VanBans" EntityType="Self.VanBan" />
+          <EntitySet Name="Videos" EntityType="Self.Video" />
+          <AssociationSet Name="FK_Banner_NguoiDung" Association="Self.FK_Banner_NguoiDung">
+            <End Role="NguoiDung" EntitySet="NguoiDungs" />
+            <End Role="Banner" EntitySet="Banners" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChuyenDe_NguoiDung" Association="Self.FK_ChuyenDe_NguoiDung">
+            <End Role="NguoiDung" EntitySet="NguoiDungs" />
+            <End Role="ChuyenDe" EntitySet="ChuyenDes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HinhAnhHoatDong_NguoiDung" Association="Self.FK_HinhAnhHoatDong_NguoiDung">
+            <End Role="NguoiDung" EntitySet="NguoiDungs" />
+            <End Role="HinhAnhHoatDong" EntitySet="HinhAnhHoatDongs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LienKetHuuIch_NguoiDung" Association="Self.FK_LienKetHuuIch_NguoiDung">
+            <End Role="NguoiDung" EntitySet="NguoiDungs" />
+            <End Role="LienKetHuuIch" EntitySet="LienKetHuuIches" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Menu_NguoiDung" Association="Self.FK_Menu_NguoiDung">
+            <End Role="NguoiDung" EntitySet="NguoiDungs" />
+            <End Role="Menu" EntitySet="Menus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TinBai_Menu" Association="Self.FK_TinBai_Menu">
+            <End Role="Menu" EntitySet="Menus" />
+            <End Role="TinBai" EntitySet="TinBais" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabThongTin_NguoiDung" Association="Self.FK_TabThongTin_NguoiDung">
+            <End Role="NguoiDung" EntitySet="NguoiDungs" />
+            <End Role="TabThongTin" EntitySet="TabThongTins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThongBao_NguoiDung" Association="Self.FK_ThongBao_NguoiDung">
+            <End Role="NguoiDung" EntitySet="NguoiDungs" />
+            <End Role="ThongBao" EntitySet="ThongBaos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThongTinWebSite_NguoiDung" Association="Self.FK_ThongTinWebSite_NguoiDung">
+            <End Role="NguoiDung" EntitySet="NguoiDungs" />
+            <End Role="ThongTinWebSite" EntitySet="ThongTinWebSites" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TinBai_NguoiDung" Association="Self.FK_TinBai_NguoiDung">
+            <End Role="NguoiDung" EntitySet="NguoiDungs" />
+            <End Role="TinBai" EntitySet="TinBais" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VanBan_NguoiDung" Association="Self.FK_VanBan_NguoiDung">
+            <End Role="NguoiDung" EntitySet="NguoiDungs" />
+            <End Role="VanBan" EntitySet="VanBans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Video_NguoiDung" Association="Self.FK_Video_NguoiDung">
+            <End Role="NguoiDung" EntitySet="NguoiDungs" />
+            <End Role="Video" EntitySet="Videos" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="DBEntities">
+          <EntitySetMapping Name="Banners">
+            <EntityTypeMapping TypeName="DBModel.Banner">
+              <MappingFragment StoreEntitySet="Banner">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Show" ColumnName="Show" />
+                <ScalarProperty Name="NguoiDungID" ColumnName="NguoiDungID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChuyenDes">
+            <EntityTypeMapping TypeName="DBModel.ChuyenDe">
+              <MappingFragment StoreEntitySet="ChuyenDe">
+                <ScalarProperty Name="ChuyenDeID" ColumnName="ChuyenDeID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LinkFile" ColumnName="LinkFile" />
+                <ScalarProperty Name="Show" ColumnName="Show" />
+                <ScalarProperty Name="NguoiDungID" ColumnName="NguoiDungID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HinhAnhHoatDongs">
+            <EntityTypeMapping TypeName="DBModel.HinhAnhHoatDong">
+              <MappingFragment StoreEntitySet="HinhAnhHoatDong">
+                <ScalarProperty Name="HinhAnhHoatDongID" ColumnName="HinhAnhHoatDongID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Name_Ext" ColumnName="Name_Ext" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Show" ColumnName="Show" />
+                <ScalarProperty Name="NguoiDungID" ColumnName="NguoiDungID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LienKetHuuIches">
+            <EntityTypeMapping TypeName="DBModel.LienKetHuuIch">
+              <MappingFragment StoreEntitySet="LienKetHuuIch">
+                <ScalarProperty Name="LienKetHuuIchID" ColumnName="LienKetHuuIchID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Show" ColumnName="Show" />
+                <ScalarProperty Name="NguoiDungID" ColumnName="NguoiDungID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Menus">
+            <EntityTypeMapping TypeName="DBModel.Menu">
+              <MappingFragment StoreEntitySet="Menu">
+                <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="NameLink" ColumnName="NameLink" />
+                <ScalarProperty Name="Show" ColumnName="Show" />
+                <ScalarProperty Name="Positon" ColumnName="Positon" />
+                <ScalarProperty Name="NguoiDungID" ColumnName="NguoiDungID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NguoiDungs">
+            <EntityTypeMapping TypeName="DBModel.NguoiDung">
+              <MappingFragment StoreEntitySet="NguoiDung">
+                <ScalarProperty Name="NguoiDungID" ColumnName="NguoiDungID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TenDV" ColumnName="TenDV" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="LoginName" ColumnName="LoginName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+                <ScalarProperty Name="image" ColumnName="image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TabThongTins">
+            <EntityTypeMapping TypeName="DBModel.TabThongTin">
+              <MappingFragment StoreEntitySet="TabThongTin">
+                <ScalarProperty Name="TabThongTinID" ColumnName="TabThongTinID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Show" ColumnName="Show" />
+                <ScalarProperty Name="NguoiDungID" ColumnName="NguoiDungID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ThongBaos">
+            <EntityTypeMapping TypeName="DBModel.ThongBao">
+              <MappingFragment StoreEntitySet="ThongBao">
+                <ScalarProperty Name="ThongBaoID" ColumnName="ThongBaoID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="PostDate" ColumnName="PostDate" />
+                <ScalarProperty Name="Show" ColumnName="Show" />
+                <ScalarProperty Name="NguoiDungID" ColumnName="NguoiDungID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ThongTinWebSites">
+            <EntityTypeMapping TypeName="DBModel.ThongTinWebSite">
+              <MappingFragment StoreEntitySet="ThongTinWebSite">
+                <ScalarProperty Name="ThongTinWebSiteID" ColumnName="ThongTinWebSiteID" />
+                <ScalarProperty Name="tenWebSite" ColumnName="tenWebSite" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="ThongTinThem" ColumnName="ThongTinThem" />
+                <ScalarProperty Name="NguoiDungID" ColumnName="NguoiDungID" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TinBais">
+            <EntityTypeMapping TypeName="DBModel.TinBai">
+              <MappingFragment StoreEntitySet="TinBai">
+                <ScalarProperty Name="TinBaiID" ColumnName="TinBaiID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="TitleLink" ColumnName="TitleLink" />
+                <ScalarProperty Name="Images" ColumnName="Images" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="Duyet" ColumnName="Duyet" />
+                <ScalarProperty Name="Xoa" ColumnName="Xoa" />
+                <ScalarProperty Name="NgayDang" ColumnName="NgayDang" />
+                <ScalarProperty Name="NguoiDungID" ColumnName="NguoiDungID" />
+                <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+                <ScalarProperty Name="TinNoiBat" ColumnName="TinNoiBat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VanBans">
+            <EntityTypeMapping TypeName="DBModel.VanBan">
+              <MappingFragment StoreEntitySet="VanBan">
+                <ScalarProperty Name="VanBanID" ColumnName="VanBanID" />
+                <ScalarProperty Name="SoHieu" ColumnName="SoHieu" />
+                <ScalarProperty Name="NgayBanHanh" ColumnName="NgayBanHanh" />
+                <ScalarProperty Name="NgayHieuLuc" ColumnName="NgayHieuLuc" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="CoQuanBH" ColumnName="CoQuanBH" />
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="NguoiDungID" ColumnName="NguoiDungID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Videos">
+            <EntityTypeMapping TypeName="DBModel.Video">
+              <MappingFragment StoreEntitySet="Video">
+                <ScalarProperty Name="VideoID" ColumnName="VideoID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Show" ColumnName="Show" />
+                <ScalarProperty Name="NguoiDungID" ColumnName="NguoiDungID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

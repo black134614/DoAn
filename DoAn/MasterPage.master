@@ -1,0 +1,93 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<%@ Register Src="~/UserControl/ucMainMenu.ascx" TagPrefix="uc1" TagName="ucMainMenu" %>
+<%@ Register Src="~/UserControl/ucTabThongTin.ascx" TagPrefix="uc1" TagName="ucTabThongTin" %>
+<%@ Register Src="~/UserControl/ucThongBao.ascx" TagPrefix="uc1" TagName="ucThongBao" %>
+<%@ Register Src="~/UserControl/ucChuyenDe.ascx" TagPrefix="uc1" TagName="ucChuyenDe" %>
+<%@ Register Src="~/UserControl/ucVideo.ascx" TagPrefix="uc1" TagName="ucVideo" %>
+<%@ Register Src="~/UserControl/ucHinhAnhHoatDong.ascx" TagPrefix="uc1" TagName="ucHinhAnhHoatDong" %>
+<%@ Register Src="~/UserControl/ucFooter.ascx" TagPrefix="uc1" TagName="ucFooter" %>
+<%@ Register Src="~/UserControl/ucBanner.ascx" TagPrefix="uc1" TagName="ucBanner" %>
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+     <link href="Content/font-awesome.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Plugins/OwlCarousel2/assets/owl.carousel.css" rel="stylesheet" />
+    <link href="Plugins/OwlCarousel2/assets/owl.theme.default.css" rel="stylesheet" />
+    <link href="Content/animate.css" rel="stylesheet" />
+    <link href="Plugins/FancyBox/jquery.fancybox.css" rel="stylesheet" />
+    <link href="Plugins/aos/aos.css" rel="stylesheet" />
+    <link href="Content/style.css" rel="stylesheet" />
+    <link href="Content/responsive.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <uc1:ucBanner runat="server" ID="ucBanner" />
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="../Default.aspx">
+                <span class="fa fa-home d-none"></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <uc1:ucMainMenu runat="server" ID="ucMainMenu" />
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2 d-lg-none d-xl-inline-block" type="search" placeholder="Bạn Cần Tìm Gì?">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                        <span class="fa fa-search"></span>
+                    </button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <section class="main-content container-fluid">
+        <div class="row">
+            <section class="page-content col-lg-8 col-xl-9 ">
+                <form runat="server">
+                    <asp:ContentPlaceHolder runat="server" ID="content">
+
+                    </asp:ContentPlaceHolder>
+                </form>
+            </section>
+            <aside class="notify col-lg-4 col-xl-3">
+                <div class="row row-cols-2 row-cols-lg-1 p-0">
+                    <div id="clock" class="light col-12 d-lg-block d-none" data-aos="fade-left">
+                        <div class="display">
+                            <div class="weekdays"></div>
+                            <div class="digits"></div>
+                        </div>
+                    </div>
+                    <uc1:ucThongBao runat="server" ID="ucThongBao" />
+                    <uc1:ucTabThongTin runat="server" ID="ucTabThongTin" />
+                    <uc1:ucChuyenDe runat="server" ID="ucChuyenDe" />
+                    <uc1:ucVideo runat="server" ID="ucVideo" />
+                    <uc1:ucHinhAnhHoatDong runat="server" ID="ucHinhAnhHoatDong" />
+                </div>
+            </aside>
+        </div>
+        <a id="back-to-top" href="#" class="btn btn-info btn-sm back-to-top" role="button"><i class="fa fa-chevron-up" ></i></a>
+    </section>
+    <uc1:ucFooter runat="server" ID="ucFooter" />
+    <section id="script">
+        <script src="Scripts/popper.js"></script>
+        <script src="Scripts/jquery-3.0.0.js"></script>
+        <script src="Scripts/moment.js"></script>
+        <script src="Plugins/StylishClock/StylishClock.js"></script>
+        <script src="Scripts/bootstrap.js"></script>
+        <script src="Plugins/FancyBox/jquery.fancybox.js"></script>
+        <script src="Plugins/OwlCarousel2/owl.carousel.js"></script>
+        <script src="Plugins/aos/aos.js"></script>
+        <script src="Scripts/script.js"></script>
+    </section>
+</body>
+</html>

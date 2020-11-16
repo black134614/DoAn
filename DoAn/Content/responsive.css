@@ -1,0 +1,27 @@
+﻿@media (min-width: 1200px) {
+    .main-content .page-content .content .page-item .page-item-content img {
+        min-height: 118px;
+    }
+
+    .main-page-carousel.owl-carousel.owl-drag{
+        margin-bottom: -200px;
+    }
+
+    .share-button{
+        font-size: 25px
+    }
+}
+
+@media (max-width: 767.98px) {
+    .share-button {
+        font-size: 20px
+    }
+
+}
+
+@media (max-width: 991.98px) {
+    .nav-item .nav-link {
+        padding: 8px 10px;
+    }
+
+}
